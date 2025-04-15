@@ -22,6 +22,12 @@ document.addEventListener('DOMContentLoaded', function() {
             return res.json();
         })
         .then(function(json) {
+            console.log(json);
+
+            if (json.status == 404) {
+                throw new Error("user not found");
+            }
+
             avatarElement.src = json.avatar_url;
             nameElement.innerHTML = json.name;
             usernameElement.innerHTML = json.login;
@@ -29,6 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
             followersElement.innerHTML = json.followers;
             followingElement.innerHTML = json.following;
             linkElement.href = json.html_url;
+        })
+        .catch(function(erro) {
+            alert(erro);
         })
     })
 })
