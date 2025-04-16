@@ -7,9 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
         xhttp.open('GET', endpoint);
         xhttp.send();
 
-        console.log(userName);
-        console.log(endpoint);
-
         const avatarElement = document.getElementById('avatar');
         const nameElement = document.getElementById('nome');
         const usernameElement = document.getElementById('userName');
